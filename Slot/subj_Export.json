@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "subj",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "security",
+        "synonyms": []
+      },
+      {
+        "value": "management",
+        "synonyms": []
+      },
+      {
+        "value": "laundry",
+        "synonyms": []
+      },
+      {
+        "value": "food",
+        "synonyms": []
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "description": "Quantity of room",
+    "name": "noOfRoom",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "4",
+        "synonyms": [
+          "four"
+        ]
+      },
+      {
+        "value": "2 ",
+        "synonyms": [
+          "two"
+        ]
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

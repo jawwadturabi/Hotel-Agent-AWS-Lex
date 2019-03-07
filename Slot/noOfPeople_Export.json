@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "description": "Available capacity",
+    "name": "noOfPeople",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "2",
+        "synonyms": [
+          "Two"
+        ]
+      },
+      {
+        "value": "3",
+        "synonyms": [
+          "three"
+        ]
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

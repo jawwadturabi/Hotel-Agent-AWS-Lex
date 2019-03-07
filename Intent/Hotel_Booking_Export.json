@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Hotel_Booking",
+    "version": "1",
+    "fulfillmentActivity": {
+      "codeHook": {
+        "uri": "arn:aws:lambda:us-east-1:870432980343:function:Hotel-Booking-Agent",
+        "messageVersion": "1.0"
+      },
+      "type": "CodeHook"
+    },
+    "sampleUtterances": [
+      "I want room.",
+      "I want to book room.",
+      "I want to book hotel.",
+      "I want {roomkind} room",
+      "{roomkind}",
+      "For {noOfPeople} peoples",
+      "Book room for {noOfPeople} persons",
+      "I want {noOfRoom} rooms",
+      "Number of rooms are {noOfRoom}"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "noOfPeople",
+        "slotTypeVersion": "1",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "For how many persons you want to book room?"
+            },
+            {
+              "contentType": "PlainText",
+              "content": "Please tell the no of persons for which you want to book room"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}",
+          "maxAttempts": 2
+        },
+        "priority": 2,
+        "name": "noOfPeople"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "noOfRoom",
+        "slotTypeVersion": "1",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Please tell me no of room."
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 3,
+        "name": "noOfRoom"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "roomKind",
+        "slotTypeVersion": "1",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "What type of room do you want"
+            },
+            {
+              "contentType": "PlainText",
+              "content": "Please specify the category of room"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+          "maxAttempts": 2
+        },
+        "priority": 1,
+        "name": "roomkind"
+      }
+    ],
+    "slotTypes": [
+      {
+        "description": "Available categories",
+        "name": "roomKind",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Standard",
+            "synonyms": [
+              "normal"
+            ]
+          },
+          {
+            "value": "economy",
+            "synonyms": [
+              "lower"
+            ]
+          },
+          {
+            "value": "Vip",
+            "synonyms": [
+              "Upper"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "description": "Quantity of room",
+        "name": "noOfRoom",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "4",
+            "synonyms": [
+              "four"
+            ]
+          },
+          {
+            "value": "2 ",
+            "synonyms": [
+              "two"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "description": "Available capacity",
+        "name": "noOfPeople",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "2",
+            "synonyms": [
+              "Two"
+            ]
+          },
+          {
+            "value": "3",
+            "synonyms": [
+              "three"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ]
+  }
+}
